@@ -11,7 +11,7 @@ import (
 )
 
 // Generate pseudo random string
-func pseudo_uuid() (uuid string) {
+func pseudoUUID() (uuid string) {
 	b := make([]byte, 16)
 	_, err := rand.Read(b)
 	if err != nil {
@@ -33,7 +33,7 @@ func main() {
 		}
 
 		body["type"] = "generate_ok"
-		body["id"] = pseudo_uuid()
+		body["id"] = pseudoUUID()
 
 		return n.Reply(msg, body)
 	})
